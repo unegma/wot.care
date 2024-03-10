@@ -47,11 +47,11 @@ export default function BookingModal ({ showBookingModal, setShowBookingModal, p
 
         { page === 1 && (
           <>
-            <Typography variant="h3" className="secondaryColor">Choose Personality</Typography>
+            <Typography variant="h3" className="secondaryColor">Intro</Typography>
             <p>Remember to turn on your speakers, conversation will begin after all options selected (except on iOS)!</p>
             <br/>
-            <Button style={{marginRight:"10px"}} variant="contained" onClick={() => {setPersonality('moody'); setPage(2)}}>Moody</Button>
-            <Button variant="contained"  onClick={() => {setPersonality('friendly'); setPage(2)}}>Friendly</Button>
+            <Button style={{marginRight:"10px"}} variant="contained" onClick={() => {setPersonality('moody'); setPage(2)}}>Ok</Button>
+            {/*<Button variant="contained"  onClick={() => {setPersonality('friendly'); setPage(2)}}>Friendly</Button>*/}
           </>
         )}
 
