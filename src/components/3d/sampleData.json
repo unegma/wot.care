@@ -1,0 +1,121 @@
+[
+  {
+    "uuid": 1,
+    "color": "red",
+    "note": "Example Note",
+    "position": {"x":-0.42,"y":0.22,"z":-0.68},
+    "roseSize":1.1
+  },
+  {
+    "uuid": 2,
+    "color": "brown",
+    "note": "Example Note",
+    "position": {"x":-0.6,"y":0.22,"z":-0.82},
+    "roseSize": 1.2
+  },
+  {
+    "uuid": 3,
+    "color": "black",
+    "note": "Example Note",
+    "position": {"x":-0.75,"y":0.22,"z":-0.18},
+    "roseSize": 1.1
+  },
+  {
+    "uuid": 4,
+    "color": "blue",
+    "note": "Example Note",
+    "position": {"x":-0.5,"y":0.22,"z":-0.46},
+    "roseSize": 1.3
+  },
+  {
+    "uuid": 5,
+    "color": "orange",
+    "note": "Example Note",
+    "position": {"x":-0.56,"y":0.22,"z":-0.34},
+    "roseSize": 1.5
+  },
+  {
+    "uuid": 6,
+    "color": "pink",
+    "note": "Example Note",
+    "position": {"x":-0.78,"y":0.22,"z":-0.44},
+    "roseSize": 1.4
+  },
+  {
+    "uuid": 7,
+    "color": "yellow",
+    "note": "Example Note",
+    "position": {"x":-0.59,"y":0.22,"z":-0.57},
+    "roseSize": 1.2
+  },
+  {
+    "uuid": 8,
+    "color": "black",
+    "note": "Example Note",
+    "position": {"x":-0.51,"y":0.22,"z":-0.49},
+    "roseSize": 1.1
+  },
+  {
+    "uuid": 9,
+    "color": "red",
+    "note": "Example Note",
+    "position": {"x":-0.27,"y":0.22,"z":-0.69},
+    "roseSize": 1.3
+  },
+  {
+    "uuid": 10,
+    "color": "black",
+    "note": "Example Note",
+    "position": {"x":-0.64,"y":0.22,"z":-0.86},
+    "roseSize": 1.4
+  },
+  {
+    "uuid": 11,
+    "color": "black",
+    "note": "Example Note",
+    "position": {"x":-0.29,"y":0.22,"z":-0.82},
+    "roseSize": 1.5
+  },
+  {
+    "uuid": 12,
+    "color": "red",
+    "note": "Example Note",
+    "position": {"x":0.32,"y":0.22,"z":-0.72},
+    "roseSize": 1
+  },
+  {
+    "uuid": 13,
+    "color": "black",
+    "note": "Example Note",
+    "position": {"x":0.71,"y":0.22,"z":-0.1},
+    "roseSize": 1.1
+  },
+  {
+    "uuid": 14,
+    "color": "white",
+    "note": "Example Note",
+    "position": {"x":0.11,"y":0.22,"z":-0.97},
+    "roseSize": 1.3
+  },
+  {
+    "uuid": 15,
+    "color": "black",
+    "note": "Example Note",
+    "position": {"x":0.19,"y":0.22,"z":-0.87},
+    "roseSize": 1.4
+  },
+  {
+    "uuid": 16,
+    "color": "purple",
+    "note": "Example Note",
+    "position": {"x":0.22,"y":0.22,"z":-0.18},
+    "roseSize": 1.2
+  },
+  {
+    "uuid": 17,
+    "color": "red",
+    "note": "Example Note",
+    "position": {"x":0.57,"y":0.22,"z":-0.57},
+    "roseSize": 1.1
+  }
+]

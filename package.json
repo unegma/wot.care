@@ -1,0 +1,90 @@
+{
+  "name": "wot.care",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.8.2",
+    "@mui/material": "^5.8.2",
+    "@react-three/cannon": "^6.6.0",
+    "@react-three/drei": "^9.88.6",
+    "@react-three/fiber": "^8.14.5",
+    "@react-three/rapier": "^1.1.1",
+    "@react-three/xr": "^5.0.1",
+    "@unegma/wot-lib-frontend": "^6.5.0",
+    "@unegma/wot-types": "^3.0.3",
+    "@unegma/utilities": "^4.1.0",
+    "ecctrl": "^1.0.61",
+    "lamina": "^1.1.23",
+    "r3f-perf": "^7.1.2",
+    "react": "^18.2.0",
+    "react-audio-voice-recorder": "^1.2.1",
+    "react-dom": "^18.2.0",
+    "react-photo-view": "^1.1.2",
+    "react-redux": "^9.0.2",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
+    "react-share": "^4.4.1",
+    "redux": "^5.0.0",
+    "redux-thunk": "^3.1.0",
+    "three": "0.157.0",
+    "typescript": "^4.7.2",
+    "valtio": "^1.13.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "install-deps": "npm install;",
+    "update-install": "npm update; npm install;",
+    "pull-original": ". .env && git pull $ORIGINAL_GITHUB_SSH main --allow-unrelated-histories",
+    "### Deploy Functions": "",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "build-prod": "react-app-rewired build --prod",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject",
+    "deploy": ". .env && aws --profile $PROFILE s3 sync --delete ./build s3://$AWS_BUCKET_NAME",
+    "1-create-bucket": ". .env && aws --profile $PROFILE s3api create-bucket --bucket $AWS_BUCKET_NAME --region $AWS_REGION --create-bucket-configuration LocationConstraint=$AWS_REGION",
+    "2-configure-bucket": ". .env && aws --profile $PROFILE s3api put-bucket-policy --bucket $AWS_BUCKET_NAME --policy file:///$PWD/settings/bucket_policy.json && aws --profile $PROFILE s3 website s3://$AWS_BUCKET_NAME --index-document index.html --error-document index.html",
+    "### DEPLOY - called by other functions; production could be commented out and uncommented using regex": "",
+    "DEPLOY-PRODUCTION": ". .env && export REACT_APP_APP_ENV=production && react-app-rewired build --prod && aws --profile $PROFILE s3 sync --delete ./build s3://$AWS_BUCKET_NAME",
+    "DEPLOY-STAGING": ". .env && export REACT_APP_APP_ENV=staging && react-app-rewired build --prod && aws --profile $PROFILE s3 sync --delete ./build s3://$AWS_BUCKET_NAME_STAGING",
+    "### Update external libraries": "",
+    "update-wot-libraries": "npm install @unegma/wot-lib-frontend@latest; npm install @unegma/wot-types@latest"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.1",
+    "@types/node": "^16.11.36",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.9",
+    "@types/three": "^0.143.2",
+    "assert": "^2.0.0",
+    "buffer": "^6.0.3",
+    "process": "^0.11.10",
+    "react-app-rewired": "^2.2.1",
+    "sass": "^1.53.0",
+    "stream-browserify": "^3.0.0",
+    "url": "^0.11.0"
+  }
+}

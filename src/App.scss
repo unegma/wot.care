@@ -1,0 +1,512 @@
+html, body {
+  background: white;
+  width: 100vw;
+  height: 100%; /* Using 100% because 100vh on mobiles will not include the navbar*/
+}
+
+#root {
+  height:100%;
+  width: 100%;
+}
+
+.App {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+//canvas {
+//  width: 100%;
+//  height: 100%;
+//}
+
+.navBar {
+  text-align: left;
+}
+
+.MuiPaper-root {
+  border-bottom: 1px #4d4d4d solid;
+}
+
+.white {
+  color: white;
+}
+
+.buttons-container {
+  position: absolute;
+  z-index: 999;
+  bottom: 0px; /* fix for mobiles */
+  right: 0;
+  padding: 5px;
+  display: flex;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+
+.buttons-container--left-helper {
+  //left:5vw;
+  right: inherit;
+}
+
+.helperText {
+  display: block;
+  margin: 5px 5px;
+  text-decoration: underline;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*ipad mini*/
+@media screen and (min-width: 768px) {
+  .buttons-container {
+    bottom: 0;
+  }
+}
+
+.the-canvas {
+  user-select: none;
+}
+
+.buttons-container--left {
+  left:0;
+  right: inherit;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.slide-out-gallery {
+  position:absolute;
+  right: 0;
+  /*width: 100px;*/
+  height: 100vh;
+  z-index:10;
+  overflow:scroll;
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+}
+
+.slide-in {
+  animation: slide-in 0.5s forwards;
+  -webkit-animation: slide-in 0.5s forwards;
+}
+
+.slide-out {
+  animation: slide-out 0.5s forwards;
+  -webkit-animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-in {
+  100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+  100% { -webkit-transform: translateX(0%); }
+}
+
+@keyframes slide-out {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
+}
+
+@-webkit-keyframes slide-out {
+  0% { -webkit-transform: translateX(0%); }
+  100% { -webkit-transform: translateX(100%); }
+}
+
+.slide-out-gallery-container {
+  margin-top: 65px; /* height of nav bar */
+  flex-direction: column;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.slide-out-gallery-image {
+  width: 300px;
+  height: auto;
+}
+
+.closeModalButton {
+  cursor: pointer;
+  position: absolute !important;
+  right: 5px !important;
+  top:5px !important;
+}
+
+.closeModalButton--large {
+  cursor: pointer;
+  position: absolute !important;
+  right: 15px !important;
+  bottom:15px !important;
+}
+
+.home-screen-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  //filter: blur(2px);
+
+}
+
+.home-screen-cover {
+  display: flex;
+  position: absolute;
+  width:100%;
+  height:100%;
+  /*background: rgb(2,0,36);*/
+  /*background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%);*/
+  /*background: radial-gradient(circle, rgba(0,0,0,1) 100%, rgba(255,255,255,0) 0%, rgba(2,0,36,1) 0%);*/
+  opacity: 0.9;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-screen-button-container {
+  position: absolute;
+  right: 15vw !important;
+}
+
+.home-screen-button {
+  color: black !important;
+  border-color: white !important;
+  background-color: white !important;
+  font-weight: bold !important;
+}
+
+.drawer-link {
+  color: black;
+  text-decoration: none !important;
+}
+
+.main-title {
+  cursor: pointer;
+}
+
+.main-title-navbar {
+  padding: 8px;
+  padding-left: 14px;
+}
+
+.info-map {
+  min-height: 40vh;
+}
+
+
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
+
+.connect-button {
+}
+
+/* modal for connect */
+
+.closeModalButton {
+  cursor: pointer;
+  position: absolute !important;
+  right: 5px !important;
+  top:5px !important;
+  color: black;
+  cursor: pointer;
+}
+
+.modalTitle {
+  color: black;
+}
+
+.connectButtonContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.connectTypeButton {
+  margin-right: 5px !important;
+}
+
+.minitext {
+  font-size: 10px;
+}
+
+.web3connectButton {
+  color: white !important;
+  border: none !important;
+}
+
+.connectButton {
+  background-color: red !important;
+}
+
+.disconnectButton {
+  background-color: green !important;
+}
+
+.web3connectButton:hover {
+  opacity: 0.8 !important;
+}
+
+.buyButton {
+  margin-right: 5px !important;
+}
+
+.info-map {
+  min-height: 40vh;
+}
+
+/*.rightDrawer {*/
+/*  opacity: 0.5;*/
+/*}*/
+
+.rightDrawer-text-container {
+  /*position: absolute;*/
+  z-index: 999;
+  bottom: 50vh; /* fix for mobiles */
+  right: 15vw;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+
+}
+
+.rightDrawer-text-container__title {
+  font-weight: bold !important;
+  font-size: 20px !important;
+}
+
+.rightDrawer-text-container__description {
+
+}
+
+.xr-button {
+  //position: absolute;
+  //bottom: 60px;
+  padding: 12px 16px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  //color: rgb(255, 255, 255);
+  font: 13px sans-serif;
+  text-align: center;
+  opacity: 0.5;
+  outline: none;
+  z-index: 999;
+  cursor: pointer;
+  //left: calc(50% - 50px);
+  //width: 150px;
+  user-select: none;
+
+
+  @media screen and (min-width: 768px) {
+    //position: absolute;
+    //bottom: 20px;
+    padding: 12px 16px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    //color: rgb(255, 255, 255);
+    font: 13px sans-serif;
+    text-align: center;
+    opacity: 0.5;
+    outline: none;
+    z-index: 999;
+    cursor: pointer;
+    //left: calc(50% - 50px);
+    //width: 150px;
+  }
+}
+
+.home-screen-button-container {
+  z-index: 99;
+  right: 0 !important;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.home-screen-title {
+  z-index: 99;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ff0000;
+
+  @media screen and (min-width: 768px) {
+    font-size: 60px;
+  }
+}
+
+.home-screen-text {
+  z-index: 99;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff0000;
+
+  @media screen and (min-width: 768px) {
+    font-size: 30px;
+  }
+}
+
+.instructions-html {
+  padding: 10px;
+  width: 300px;
+  background-color: white;
+  font-size: 12px;
+  //line-height: 90px;
+  //z-index:9999;
+  color: black;
+  position: fixed;
+  //top: 50%;
+  //left: 50%;
+  left: -150px;
+  bottom: -150px;
+  /* bring your own prefixes */
+  //transform: translate(-50%, -50%);
+
+  @media screen and (min-width: 768px) {
+    //font-size: 100px;
+    //line-height: 160px;
+  }
+}
+
+
+.xrOverlay {
+  position: fixed;
+  z-index: 99999;
+  top: 100px;
+  left: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+
+  &__close {
+    font-size: 30px;
+    cursor: pointer;
+    background-color: red;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+
+  &__plus {
+    user-select: none;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: green;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+
+  &__minus {
+    user-select: none;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: green;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+
+  &__scale {
+    font-size: 30px;
+  }
+}
+
+#ecctrl-joystick, #ecctrl-button {
+  z-index: 998 !important; // override so under the side menu and side buttons
+}
+
+.zoom-slider {
+  position: absolute !important;
+  right: 20px;
+  top: 20%;
+  z-index: 99;
+  height: 60vh !important;
+}
+
+.recording-button {
+  user-select: none;
+  position: absolute;
+  bottom: 90px;
+  padding: 12px 16px;
+  z-index: 999;
+  cursor: pointer;
+  left: calc(50% - 60px);
+
+  & img {
+    user-select: none;
+    width: 75px !important;
+  }
+
+  & p {
+    user-select: none;
+    position: absolute;
+    top: 24px;
+    left: 32px;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+
+.dialog {
+  box-sizing: border-box;
+  position: absolute;
+  top: 57px;
+  @media screen and (min-width: 768px) {
+    top: 65px;
+  }
+  width: 100%;
+  padding: 4px 4px;
+  z-index: 999;
+  cursor: pointer;
+  //left: calc(10% - 50px);
+  background-color: darkgrey;
+  color: white;
+}
