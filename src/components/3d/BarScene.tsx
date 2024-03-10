@@ -99,10 +99,10 @@ export default function BarScene({ scale = 1, position = [0,0,0], args = [0.5, 0
         {/*<Lion playerPosition={playerPosition} myPositionRef={reffy} finalPlacement={finalPlacement} />*/}
 
         { !speaking && (
-          <TomIdle scale={1} rotation={[0,1,0]} position={[0,0,0]} playerPosition={playerPosition} />
+          <TomIdle scale={0.3} rotation={[0,1,0]} position={[0,0,0]} playerPosition={playerPosition} />
         )}
         { speaking && (
-          <TomTalking scale={1} rotation={[0,1,0]} position={[0,0,0]} playerPosition={playerPosition} speaking={speaking} setSpeaking={setSpeaking} />
+          <TomTalking scale={0.3} rotation={[0,1,0]} position={[0,0,0]} playerPosition={playerPosition} speaking={speaking} setSpeaking={setSpeaking} />
         )}
 
         {/*<Snowman scale={0.7} rotation={[0,0,0]} position={[0,0,-1.75]}  playerPosition={playerPosition} myPositionRef={reffy} finalPlacement={finalPlacement} />*/}
