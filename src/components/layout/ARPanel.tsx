@@ -72,7 +72,7 @@ export default function ARPanel({showBookingModal, personality, speaking, setSpe
     addAudioElement(recordingBlob);
   }, [recordingBlob]);
 
-  const INITIAL_PROMPT = "Hello there, can I get you anything?";
+  const INITIAL_PROMPT = "Hello, can I help you with anything?";
 
   const [audioURI, setAudioURI] = useState<any>(null!);
   const [processing, setProcessing] = useState(false);
