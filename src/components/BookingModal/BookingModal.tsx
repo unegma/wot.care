@@ -42,7 +42,8 @@ export default function BookingModal ({ showBookingModal, setShowBookingModal, p
         { page === 1 && (
           <>
             <Typography variant="h3" className="secondaryColor">Intro</Typography>
-            <p>Remember to turn on your speakers, conversation will begin after all options selected (except on iOS)!</p>
+            <p>Dr Wot is not a real doctor but is a virtual assistant to help direct you and inform you on services available within the UK healthcare system.</p>
+            <p>Click the green speaker and then press send to send a message. Remember to turn on your speakers, conversation will begin after all options selected (except on iOS)!</p>
             <br/>
             <Button style={{marginRight:"10px"}} variant="contained" onClick={() => {setPersonality('moody'); setPage(2)}}>Ok</Button>
             {/*<Button variant="contained"  onClick={() => {setPersonality('friendly'); setPage(2)}}>Friendly</Button>*/}
