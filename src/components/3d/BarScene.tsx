@@ -109,7 +109,6 @@ export default function BarScene({ scale = 1, position = [0,0,0], args = [0.5, 0
 
         {/*<Tree scale={0.7} position={[2.5,0,0]}/>*/}
 
-        <NightBar position={[0,0,0]} scale={1} />
 
       </group>
     </>
