@@ -3,7 +3,7 @@ import useSceneInteractions from "../../hooks/useSceneInteractions";
 import {useAudioRecorder} from "react-audio-voice-recorder";
 import AudioPlayer from "./AudioPlayer/AudioPlayer";
 import RecordingButton from "../various/RecordingButton";
-import {BBOApiResponse} from "@unegma/wot-types";
+import {WOTApiResponse} from "@unegma/wot-types";
 import {blobToBase64, createResponse} from "@unegma/wot-lib-frontend";
 import AutoAudioPlayer from "./AudioPlayer/AutoAudioPlayer";
 
@@ -149,7 +149,7 @@ export default function ARPanel({showBookingModal, personality, speaking, setSpe
     console.log('audio',base64Audio);
 
     // todo check SA2Response type data is the only data on the response
-    const responseData: BBOApiResponse = await createResponse(
+    const responseData: WOTApiResponse = await createResponse(
       ENDPOINT,
       '',
       base64Audio,
