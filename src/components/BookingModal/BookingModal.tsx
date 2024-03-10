@@ -1,10 +1,6 @@
 import {Button, createStyles, makeStyles, Modal, Theme, Typography, Box, scopedCssBaselineClasses} from "@mui/material";
 import React from "react";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import {Link} from "react-router-dom";
-import './BookingModal.scss'
 import {XRButton} from "@react-three/xr";
-
 
 
 export default function BookingModal ({ showBookingModal, setShowBookingModal, personality, setPersonality }: any) {
@@ -42,8 +38,6 @@ export default function BookingModal ({ showBookingModal, setShowBookingModal, p
       aria-describedby="simple-modal-description"
     >
       <Box component="div" sx={modalStyle}>
-        {/*<HighlightOffIcon className="closeModalButton" onClick={() => { setShowBookingModal(false)}}/>*/}
-
 
         { page === 1 && (
           <>
@@ -106,9 +100,6 @@ export default function BookingModal ({ showBookingModal, setShowBookingModal, p
         <br/>
         <br/>
 
-        {/*<Typography className="secondaryColor">*/}
-        {/*  <a target="_blank" href="#">Booking Form</a><br/>*/}
-        {/*</Typography>*/}
       </Box>
     </Modal>
   )

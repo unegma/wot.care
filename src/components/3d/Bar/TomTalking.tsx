@@ -46,22 +46,9 @@ type ContextType = Record<string, React.ForwardRefExoticComponent<JSX.IntrinsicE
 export function TomTalking({ speaking, setSpeaking, mode, lockKeyboard, setHintMessage, hintMessage, setShowHintBox, playerPosition, setPlayerPosition, scale, rotation, position, myPositionRef, finalPlacement }: any) {
   const group = useRef<THREE.Group>(null!)
   const { nodes, materials, animations } = useGLTF(ITEM_URI) as GLTFResult
+
   // @ts-ignore
-  // const { actions } = useAnimations<GLTFActions>(animations, group)
-  //
-  // // @ts-ignore
   const [mixer] = useState(() => new THREE.AnimationMixer())
-  //
-  // useEffect(() => {
-  //   mixer.clipAction(animations[0], group.current).setDuration(4);
-  //
-  //   if (speaking) {
-  //     mixer.clipAction(animations[0], group.current).play();
-  //
-  //     // todo if finished speaking setSpeaking to false and await speaking to become true again before playing again
-  //   }
-  //
-  // }, [animations])
 
   useEffect(() => {
     if (animations.length === 0 || !group.current) return;
@@ -70,9 +57,6 @@ export function TomTalking({ speaking, setSpeaking, mode, lockKeyboard, setHintM
 
     const handleFinished = () => {
       setSpeaking(false);
-
-      // Optional: Implement logic to wait for `speaking` to become true again
-      // This could be based on some external event or condition.
     };
 
     action.loop = THREE.LoopOnce;
@@ -92,7 +76,6 @@ export function TomTalking({ speaking, setSpeaking, mode, lockKeyboard, setHintM
       mixer.removeEventListener('finished', onFinish );
     };
   }, [speaking, animations, mixer]); // all these may not be needed
-
 
 
   useFrame((scene, delta) => {

@@ -44,8 +44,6 @@ type ContextType = Record<string, React.ForwardRefExoticComponent<JSX.IntrinsicE
 export function TomIdle({ mode, lockKeyboard, setHintMessage, hintMessage, setShowHintBox, playerPosition, setPlayerPosition, scale, rotation, position, myPositionRef, finalPlacement }: any) {
   const group = useRef<THREE.Group>(null!)
   const { nodes, materials, animations } = useGLTF(ITEM_URI) as GLTFResult
-  // @ts-ignore
-  // const { actions } = useAnimations<GLTFActions>(animations, group)
 
   // @ts-ignore
   const [mixer] = useState(() => new THREE.AnimationMixer())

@@ -4,23 +4,10 @@ import {
 } from "react-router-dom";
 import './App.scss';
 import NavBar from "./components/layout/NavBar";
-import {
-  CameraAltOutlined,
-  ChevronLeft,
-  ChevronRight,
-  InfoOutlined, LinearScale,
-  Menu,
-  ScreenshotMonitor, Straighten,
-  ViewInAr
-} from "@mui/icons-material";
 import InfoModal from "./components/layout/InfoModal";
-import LeftSideDrawer from "./components/layout/LeftSideDrawer";
-import HomeScreen from "./components/pages/HomeScreen";
-import DashboardScreen from "./components/pages/DashboardScreen";
 import RelicOne from "./components/pages/RelicOne";
 import RightSideDrawer from "./components/layout/RightSideDrawer";
 import useSceneInteractions from "./hooks/useSceneInteractions";
-import {SliderValueLabel} from "@mui/material";
 import BarScene from "./components/3d/BarScene";
 import BookingModal from "./components/BookingModal/BookingModal";
 
@@ -49,11 +36,6 @@ function App() {
   const location = useLocation();
 
   const [movable, setMovable] = React.useState(true); // todo move to scene interactions
-  const [scene, setScene] = React.useState(''); // todo move to scene interactions
-  const [furnitureItem, setFurnitureItem] = React.useState('chair'); // todo move to scene interactions
-  const [japaneseFurnitureItem, setJapaneseFurnitureItem] = React.useState('bench'); // todo move to scene interactions
-  const [survivalFurnitureItem, setSurvivalFurnitureItem] = React.useState('fire'); // todo move to scene interactions
-
   const [overrideNativeEvent,setOverrideNativeEvent] = React.useState(false); // this is to block the click on the screen when clicking the overlay
 
   const {
@@ -103,21 +85,10 @@ function App() {
       <InfoModal showInfoModal={showInfoModal} setShowInfoModal={setShowInfoModal} />
       <BookingModal personality={personality} setPersonality={setPersonality} showBookingModal={showBookingModal} setShowBookingModal={setShowBookingModal} />
 
-      {/*<LeftSideDrawer*/}
-      {/*  drawerOpen={drawerOpen}*/}
-      {/*  toggleLeftSideDrawer={toggleLeftSideDrawer}*/}
-      {/*  setShowImages={setShowImages}*/}
-      {/*  setShowInfoModal={setShowInfoModal}*/}
-      {/*  setInfoTitle={setInfoTitle}*/}
-      {/*  setInfoText={setInfoText}*/}
-      {/*/>*/}
 
       <RightSideDrawer
         infoOpen={infoOpen}
         toggleRightSideDrawer={toggleRightSideDrawer}
-        // setShowImages={setShowImages}
-        // setShowInfoModal={setShowInfoModal}
-        // showInfoModal={showInfoModal}
         infoTitle={infoTitle}
         infoText={infoText}
         drawerRightOpen={drawerRightOpen}
@@ -125,14 +96,6 @@ function App() {
       />
 
       <Routes>
-        {/*<Route*/}
-        {/*  key={'home'}*/}
-        {/*  path="/"*/}
-        {/*  element={*/}
-        {/*    <HomeScreen toggleLeftSideDrawer={toggleLeftSideDrawer} />*/}
-        {/*  }*/}
-        {/*/>*/}
-
         <Route
           key={'home'}
           path="/"
@@ -155,19 +118,9 @@ function App() {
       </Routes>
 
       <div className="buttons-container">
-        {/*<InfoOutlined className="pointer" style={{ color: "black", margin: "0 4px" }} />*/}
-        <ScreenshotMonitor className="pointer" style={{ color: "black", margin: "0 4px" }} onClick={() => {setPresenting(!presenting)}} />
 
         <div className="pointer" onClick={(event) => {toggleRightSideDrawer(event)}}>
 
-          {/*<InfoOutlined className="pointer" style={{ color: "black", margin: "0 4px" }} />*/}
-
-          {/*{ drawerRightOpen && (*/}
-          {/*  <ChevronRight style={{ color: "black", margin: "0 4px" }} />*/}
-          {/*)}*/}
-          {/*{ !drawerRightOpen && (*/}
-          {/*  <ChevronLeft style={{ color: "black", margin: "0 4px" }} />*/}
-          {/*)}*/}
         </div>
       </div>
     </div>
